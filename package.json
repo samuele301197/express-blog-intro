@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-intro-1",
+  "version": "1.0.0",
+  "description": "birre",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuele301197/express-blog-intro.git"
+  },
+  "author": "samuele parisi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuele301197/express-blog-intro/issues"
+  },
+  "homepage": "https://github.com/samuele301197/express-blog-intro#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

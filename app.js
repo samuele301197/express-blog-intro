@@ -1,0 +1,58 @@
+import express from "express"
+import fs from "fs"
+
+const app = express();
+
+const port = 3000
+
+app.listen(port, () => {console.log("ascolto");
+})
+
+app.use(express.static("public"))
+
+app.get("/", (req, res) => {
+    res.send("Server del mio Blog")
+})
+
+app.get("/bacheca", (req, res) => {
+    const birrePreferite = [
+  {
+    titolo: "Brewdog, Punk Ipa",
+    tipologia: "Indian Pale Ale",
+    immagine: "img/punk-ipa.webp",
+    tags: ["Mastri Birrai", "Alta Fermentazione", "Birre Italiane"]
+  },
+  {
+    titolo: "Birrificio Baladin, Birra Nazionale ",
+    tipologia: "Golden Ale, Blonde ALe",
+    immagine: "img/birra-nazionale.jpg",
+    tags: ["Mastri Birrai", "Alta Fermentazione", "Birre Italiane"]
+  },
+  {
+    titolo: "Dubuisson, Bush Blonde ",
+    tipologia: "Belgian Strong ALe",
+    immagine: "img/bush-blonde.webp",
+    tags: ["Mastri Birrai", "Alta Fermentazione", "Birre Italiane"]
+  },
+  {
+    titolo: "Birra Antoniana, Scudata",
+    tipologia: "Lager, Helles",
+    immagine: "img/scudata.png",
+    tags: ["Mastri Birrai", "Alta Fermentazione", "Birre Italiane"]
+  },
+  {
+    titolo: "Birrificio Baladin, L'IPA ",
+    tipologia: "Indian Pale Ale",
+    immagine: "img/baladin-ipa.jpg",
+    tags: ["Mastri Birrai", "Alta Fermentazione", "Birre Italiane"]
+  }
+];
+
+const resData = {
+    data: birrePreferite
+};
+res.json(resData);
+});
+
+const dataJson = fs.readFileSync("./data/birre.json");
+const lista = JSON.parse(dataJson);
