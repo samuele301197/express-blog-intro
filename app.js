@@ -49,6 +49,7 @@ app.get("/bacheca", (req, res) => {
 ];
 
 const resData = {
+    count: birrePreferite.length,
     data: birrePreferite
 };
 res.json(resData);
