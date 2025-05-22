@@ -55,5 +55,6 @@ const resData = {
 res.json(resData);
 });
 
+
 const dataJson = fs.readFileSync("./data/birre.json");
 const lista = JSON.parse(dataJson);
